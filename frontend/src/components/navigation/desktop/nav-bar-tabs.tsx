@@ -11,6 +11,7 @@ export const NavBarTabs: React.FC = () => {
       <NavBarTab path="/public" label="Public" />
       {isAuthenticated && (
         <>
+          <NavBarTab path="/dashboard" label="Dashboard" />
           <NavBarTab path="/protected" label="Protected" />
           <NavBarTab path="/admin" label="Admin" />
         </>

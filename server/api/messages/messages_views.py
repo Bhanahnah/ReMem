@@ -1,6 +1,5 @@
-from flask import (
-    Blueprint
-)
+from flask import Blueprint, g
+
 
 from api.messages.messages_service import (
     get_public_message,
@@ -26,6 +25,7 @@ def public():
 @bp.route("/protected")
 @authorization_guard
 def protected():
+    print(g.get("access_token"), g.get("access_token").get("permissions"))
     return vars(get_protected_message())
 
 

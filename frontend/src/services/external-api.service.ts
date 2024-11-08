@@ -1,5 +1,5 @@
 import axios, { AxiosError, AxiosRequestConfig, AxiosResponse } from "axios";
-import { ApiResponse } from "../models/api-response";
+import { ApiResponse } from "../models/api-models";
 import { AppError } from "../models/app-error";
 
 export const callExternalApi = async (options: {

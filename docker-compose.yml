@@ -1,0 +1,49 @@
+version: "3"
+services:
+  api:
+    build:
+      context: ./server
+      dockerfile: Dockerfile
+    image: us-south1-docker.pkg.dev/remem-440605/remem-images/dev-backend-api:latest
+    ports:
+      - 6060:6060
+    env_file:
+      - .env
+      - ./server/.env
+      - ./server/.flaskenv
+    tty: True
+    volumes:
+      - ./server:/app
+    networks:
+      - frontend
+      - backend
+  client:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: us-south1-docker.pkg.dev/remem-440605/remem-images/dev-frontend-website:latest
+    ports:
+      - 4040:4040
+      - 80:80
+    env_file:
+      - .env
+      - ./frontend/.env
+    tty: True
+    volumes:
+      - ./frontend:/app
+      - /app/node_modules
+    networks:
+      - frontend
+networks:
+  frontend:
+    driver: bridge
+  backend:
+    driver: bridge
+volumes:
+  # mongodbdata:
+  #   driver: local
+  appdata:
+    driver: local
+# How to use base img for all builds?
+# One line docker for installing GCP CLI
+# RUN echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | tee -a /etc/apt/sources.list.d/google-cloud-sdk.list && curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo gpg --dearmor -o /usr/share/keyrings/cloud.google.gpg && apt-get update -y && apt-get install google-cloud-cli -y

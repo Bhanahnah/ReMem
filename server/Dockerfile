@@ -1,4 +1,5 @@
-FROM python:3.9.2-slim-buster@sha256:721de1d0aea3331da282531b8b9e428d552b89bd6fd0d0c14e634deaddc241fc as build
+# FROM python:3.9.2-slim-buster@sha256:721de1d0aea3331da282531b8b9e428d552b89bd6fd0d0c14e634deaddc241fc as build
+FROM python:3.10.0 as build
 RUN groupadd auth0 && useradd -m developer -g auth0
 USER developer
 WORKDIR /home/developer
