@@ -11,6 +11,7 @@ import { ProfilePage } from "./pages/profile-page";
 import { ProtectedPage } from "./pages/protected-page";
 import { PublicPage } from "./pages/public-page";
 import { DashboardPage } from "./pages/dashboard-page";
+import { ChatbotPage } from "./pages/test-chatbot-page";
 
 export const App: React.FC = () => {
   const { isLoading } = useAuth0();
@@ -24,6 +25,9 @@ export const App: React.FC = () => {
   }
   return (
     <Routes>
+      <Route path="/" element={<ChatbotPage />} />
+
+      {/* TODO: MAKE WORK EVENTUALLY
       <Route path="/" element={<HomePage />} />
       <Route
         path="/dashboard"
@@ -42,7 +46,7 @@ export const App: React.FC = () => {
         path="/admin"
         element={<AuthenticationGuard component={AdminPage} />}
       />
-      <Route path="/callback" element={<CallbackPage />} />
+      <Route path="/callback" element={<CallbackPage />} /> */}
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

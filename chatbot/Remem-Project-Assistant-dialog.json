@@ -1,0 +1,2562 @@
+{
+  "intents": [
+    {
+      "intent": "add_memory",
+      "examples": [
+        {
+          "text": "Add a memory",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                6,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Add a test input",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                11,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Contribute information",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                11,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I'd like to test this out.",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                17,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Input a record",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                8,
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I want to enter some personal data.",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                30,
+                35
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Log some data",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                9,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Store files",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                6,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Store some data",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                11,
+                15
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "Add a memory/record/data to ReMem"
+    },
+    {
+      "intent": "ask_about_app_use",
+      "examples": [
+        {
+          "text": "What does it do?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                10,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the purpose of the app?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                27,
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the use case?"
+        },
+        {
+          "text": "What is this for?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                8,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is your purpose in life?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                8,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What's the function?"
+        },
+        {
+          "text": "When should I use this?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                18,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Why do you exist?"
+        },
+        {
+          "text": "Why should I use this website?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                22,
+                29
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "User asks what remem is used for/what it is."
+    },
+    {
+      "intent": "ask_about_app_workings",
+      "examples": [
+        {
+          "text": "How are you using AI for this website?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                30,
+                37
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How does content extraction work in this app?",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                9,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How does content summary work?",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                9,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How does it work?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                9,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How is machine learning being used?"
+        },
+        {
+          "text": "What are the inner workings of the website?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                35,
+                42
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What are the systems being used here?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                27,
+                36
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What does the AI do?"
+        },
+        {
+          "text": "What's behind the app?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                18,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What's the underlying algorithm?"
+        }
+      ],
+      "description": "User asking about the how the website/app works"
+    },
+    {
+      "intent": "ask_about_data",
+      "examples": [
+        {
+          "text": "data",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                0,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How do you ingest data?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                7,
+                10
+              ]
+            },
+            {
+              "entity": "data",
+              "location": [
+                18,
+                22
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How is data collected?",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                7,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "So what is the app doing with the data?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                15,
+                18
+              ]
+            },
+            {
+              "entity": "data",
+              "location": [
+                34,
+                38
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the data used for?",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                12,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Where is the data used?",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                13,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Why do you need data?",
+          "mentions": [
+            {
+              "entity": "app",
+              "location": [
+                7,
+                10
+              ]
+            },
+            {
+              "entity": "data",
+              "location": [
+                16,
+                20
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "User asks about the data, how it's collected, or what it's used for"
+    },
+    {
+      "intent": "Bot_Control_Approve_Response",
+      "examples": [
+        {
+          "text": "Affirmative. That's what I'm looking for."
+        },
+        {
+          "text": "All right"
+        },
+        {
+          "text": "Correct"
+        },
+        {
+          "text": "For sure!"
+        },
+        {
+          "text": "Got it"
+        },
+        {
+          "text": "Great"
+        },
+        {
+          "text": "I agree"
+        },
+        {
+          "text": "I like that"
+        },
+        {
+          "text": "Indeed!"
+        },
+        {
+          "text": "Sure thing!"
+        },
+        {
+          "text": "Sweet"
+        },
+        {
+          "text": "That is precisely what I was looking for"
+        },
+        {
+          "text": "That is right"
+        },
+        {
+          "text": "That is the proper response."
+        },
+        {
+          "text": "That is what I need"
+        },
+        {
+          "text": "That's exactly what I want"
+        },
+        {
+          "text": "This is alright"
+        },
+        {
+          "text": "Very well. Let's do it."
+        },
+        {
+          "text": "Yeah, that's it!"
+        },
+        {
+          "text": "Yes"
+        },
+        {
+          "text": "You read my mind"
+        }
+      ],
+      "description": "Acknowledge that the response satisfies a question."
+    },
+    {
+      "intent": "Bot_Control_Change_Subject",
+      "examples": [
+        {
+          "text": "A different matter"
+        },
+        {
+          "text": "Another thing"
+        },
+        {
+          "text": "Can we talk about something else?"
+        },
+        {
+          "text": "Change topic"
+        },
+        {
+          "text": "Chat about something else"
+        },
+        {
+          "text": "Discuss something else"
+        },
+        {
+          "text": "Help me with this other question"
+        },
+        {
+          "text": "Here is another issue"
+        },
+        {
+          "text": "I have one more question"
+        },
+        {
+          "text": "Let us change the topic"
+        },
+        {
+          "text": "Let us talk about something else"
+        },
+        {
+          "text": "Talk about something else"
+        }
+      ],
+      "description": "Change to a different topic."
+    },
+    {
+      "intent": "Bot_Control_Clarification",
+      "examples": [
+        {
+          "text": "Can you say that again please?"
+        },
+        {
+          "text": "Come again?"
+        },
+        {
+          "text": "Explains"
+        },
+        {
+          "text": "I did not quite understand what you gave me"
+        },
+        {
+          "text": "I didn't catch that"
+        },
+        {
+          "text": "I didn't quite understand what you said"
+        },
+        {
+          "text": "I didn't understand that properly"
+        },
+        {
+          "text": "I don't get it"
+        },
+        {
+          "text": "I don't understand"
+        },
+        {
+          "text": "I don't understand what you're saying"
+        },
+        {
+          "text": "I need more information"
+        },
+        {
+          "text": "Let's try to say that again more clearly, shall we?"
+        },
+        {
+          "text": "What are you referring to?"
+        },
+        {
+          "text": "What are you saying?"
+        },
+        {
+          "text": "What are you talking about?"
+        },
+        {
+          "text": "What do you mean?"
+        },
+        {
+          "text": "What do you mean by that?"
+        }
+      ],
+      "description": "Repeat or clarify last statement."
+    },
+    {
+      "intent": "Bot_Control_Confirm_Presence",
+      "examples": [
+        {
+          "text": "Am I talking to someone?"
+        },
+        {
+          "text": "Anyone there?"
+        },
+        {
+          "text": "Are you leaving me?"
+        },
+        {
+          "text": "Are you on?"
+        },
+        {
+          "text": "Are you still around?"
+        },
+        {
+          "text": "Are you still here with me?"
+        },
+        {
+          "text": "Are you there?"
+        },
+        {
+          "text": "Did you go somewhere?"
+        },
+        {
+          "text": "Did you hear what I said?"
+        },
+        {
+          "text": "Have I lost you?"
+        },
+        {
+          "text": "I am still holding"
+        },
+        {
+          "text": "Is anybody here?"
+        },
+        {
+          "text": "Is anybody home?"
+        },
+        {
+          "text": "Speak to me if you are there."
+        },
+        {
+          "text": "Where'd you go?"
+        },
+        {
+          "text": "You around?"
+        }
+      ],
+      "description": "Ask the bot to indicate that it is available."
+    },
+    {
+      "intent": "Bot_Control_Ignore_Undo",
+      "examples": [
+        {
+          "text": "Actually, I take that back"
+        },
+        {
+          "text": "Cancel"
+        },
+        {
+          "text": "Hold on! I think I want to do it differently."
+        },
+        {
+          "text": "I change my mind."
+        },
+        {
+          "text": "I did not mean that?"
+        },
+        {
+          "text": "I didn't mean to do that actually, let's go back"
+        },
+        {
+          "text": "Ignore this"
+        },
+        {
+          "text": "It's not what I mean"
+        },
+        {
+          "text": "Let us redo that again!"
+        },
+        {
+          "text": "Never"
+        },
+        {
+          "text": "Never mind"
+        },
+        {
+          "text": "Nothing"
+        },
+        {
+          "text": "Not yet"
+        },
+        {
+          "text": "Wait! Let's back up few steps and do that again"
+        }
+      ],
+      "description": "Ask the bot to take one step back."
+    },
+    {
+      "intent": "Bot_Control_Reject_Response",
+      "examples": [
+        {
+          "text": "Bad response"
+        },
+        {
+          "text": "I disagree"
+        },
+        {
+          "text": "I do not think it is the answer?"
+        },
+        {
+          "text": "I don't need that"
+        },
+        {
+          "text": "I don't want that"
+        },
+        {
+          "text": "It is not what I want"
+        },
+        {
+          "text": "It is not what I was looking for"
+        },
+        {
+          "text": "I wasn't looking for that"
+        },
+        {
+          "text": "No"
+        },
+        {
+          "text": "No I'm fine thanks"
+        },
+        {
+          "text": "Not the right response"
+        },
+        {
+          "text": "That answer is incorrect"
+        },
+        {
+          "text": "That is not true"
+        },
+        {
+          "text": "That sounds like the wrong response"
+        },
+        {
+          "text": "That was not my intent"
+        },
+        {
+          "text": "That was wrong, try again"
+        },
+        {
+          "text": "Wrong response"
+        },
+        {
+          "text": "You did not understand what I asked"
+        },
+        {
+          "text": "You did not understand what I said"
+        },
+        {
+          "text": "You didn't understand me"
+        },
+        {
+          "text": "You're misunderstanding me"
+        }
+      ],
+      "description": "Indicate the bot's response does not address a question."
+    },
+    {
+      "intent": "Bot_Control_Standby",
+      "examples": [
+        {
+          "text": "Back again soon"
+        },
+        {
+          "text": "Be back later"
+        },
+        {
+          "text": "Be patient with me"
+        },
+        {
+          "text": "Can you give me a moment?"
+        },
+        {
+          "text": "Can you wait for me?"
+        },
+        {
+          "text": "Give me a few minutes to get together"
+        },
+        {
+          "text": "Give me a moment"
+        },
+        {
+          "text": "Give me a second"
+        },
+        {
+          "text": "Hold on"
+        },
+        {
+          "text": "In a moment"
+        },
+        {
+          "text": "I want stop a moment"
+        },
+        {
+          "text": "I will be back"
+        },
+        {
+          "text": "I would like to put you on hold"
+        },
+        {
+          "text": "Just a sec"
+        },
+        {
+          "text": "Just hold on"
+        },
+        {
+          "text": "Keep holding"
+        },
+        {
+          "text": "Let me see"
+        },
+        {
+          "text": "Need a minute here"
+        },
+        {
+          "text": "Out for a break"
+        },
+        {
+          "text": "Wait"
+        }
+      ],
+      "description": "Indicate a delay in providing input to the bot."
+    },
+    {
+      "intent": "Bot_Control_Start_Over",
+      "examples": [
+        {
+          "text": "Actually, let's start over"
+        },
+        {
+          "text": "Back to the beginning"
+        },
+        {
+          "text": "Back to the top"
+        },
+        {
+          "text": "Begin over!"
+        },
+        {
+          "text": "Can we please start over?"
+        },
+        {
+          "text": "How can I start over?"
+        },
+        {
+          "text": "I need to reset."
+        },
+        {
+          "text": "I want start from the beginning"
+        },
+        {
+          "text": "I would like to start all over"
+        },
+        {
+          "text": "Let's go back to square one"
+        },
+        {
+          "text": "Let's pick this up from the top again."
+        },
+        {
+          "text": "Let us reopen this again."
+        },
+        {
+          "text": "One more time from the beginning"
+        },
+        {
+          "text": "Please initiate from the beginning"
+        },
+        {
+          "text": "Please reset"
+        },
+        {
+          "text": "Please start a new chat"
+        },
+        {
+          "text": "Restart"
+        },
+        {
+          "text": "Start over"
+        },
+        {
+          "text": "We need a do-over"
+        },
+        {
+          "text": "We will need to begin again"
+        }
+      ],
+      "description": "Restart bot or current flow."
+    },
+    {
+      "intent": "Bot_Control_Unsure",
+      "examples": [
+        {
+          "text": "I don t know what you need"
+        },
+        {
+          "text": "I don t know what you want"
+        },
+        {
+          "text": "I have no idea, actually"
+        },
+        {
+          "text": "I have no idea what you are looking for"
+        },
+        {
+          "text": "I haven't got a clue"
+        },
+        {
+          "text": "I m not certain I get what you re saying"
+        },
+        {
+          "text": "I m not sure what will make you happy"
+        },
+        {
+          "text": "I m not yet convinced"
+        },
+        {
+          "text": "No clue"
+        },
+        {
+          "text": "No idea"
+        },
+        {
+          "text": "To be honest, I m really not sure"
+        },
+        {
+          "text": "You got me"
+        }
+      ],
+      "description": "Indicate no definite answer to a question."
+    },
+    {
+      "intent": "business_understanding",
+      "examples": [
+        {
+          "text": "How can we best analyze and comprehend the business context?"
+        },
+        {
+          "text": "How should one go about identifying key business objectives and priorities?"
+        },
+        {
+          "text": "What is the business understanding?"
+        },
+        {
+          "text": "What’s a good strategy for understanding the business landscape?"
+        },
+        {
+          "text": "What steps should be taken to gain a clear understanding of business needs?"
+        },
+        {
+          "text": "What’s the most effective way to develop insights into business requirements?"
+        }
+      ],
+      "description": "Business understanding intent"
+    },
+    {
+      "intent": "General_About_You",
+      "examples": [
+        {
+          "text": "About you"
+        },
+        {
+          "text": "Can I use another language?"
+        },
+        {
+          "text": "Describe your self"
+        },
+        {
+          "text": "Do you have a name?"
+        },
+        {
+          "text": "Do you know who you are?"
+        },
+        {
+          "text": "How can I configure you?"
+        },
+        {
+          "text": "How do you function?"
+        },
+        {
+          "text": "How old are you?"
+        },
+        {
+          "text": "Introduce your self"
+        },
+        {
+          "text": "I want to set up the chat bot for my shop"
+        },
+        {
+          "text": "Let us talk about you"
+        },
+        {
+          "text": "Tell me about your life"
+        },
+        {
+          "text": "Tell me something about yourself"
+        },
+        {
+          "text": "What languages do you speak?"
+        },
+        {
+          "text": "What should I know about you?"
+        },
+        {
+          "text": "What's your name?"
+        },
+        {
+          "text": "Where are you from?"
+        },
+        {
+          "text": "Where were you born?"
+        },
+        {
+          "text": "Who are you?"
+        },
+        {
+          "text": "Why are you here?"
+        }
+      ],
+      "description": "Request generic personal attributes."
+    },
+    {
+      "intent": "General_Agent_Capabilities",
+      "examples": [
+        {
+          "text": "Can you please give me a list of the types of things you can help me with?"
+        },
+        {
+          "text": "Can you tell me what services you are able to help me with?"
+        },
+        {
+          "text": "Do you have a list of things I can talk to you about?"
+        },
+        {
+          "text": "Help now"
+        },
+        {
+          "text": "Hi, what do you do?"
+        },
+        {
+          "text": "How can I use you?"
+        },
+        {
+          "text": "How can you help me?"
+        },
+        {
+          "text": "How can you solve my problems?"
+        },
+        {
+          "text": "How do I use you?"
+        },
+        {
+          "text": "I'd like to know what type of questions you can answer for me."
+        },
+        {
+          "text": "I do not know what to ask"
+        },
+        {
+          "text": "Is there anything you can help me with?"
+        },
+        {
+          "text": "Tell me about what kind of things you do?"
+        },
+        {
+          "text": "Tell me something"
+        },
+        {
+          "text": "What are my options?"
+        },
+        {
+          "text": "What are my options that you can help with?"
+        },
+        {
+          "text": "What are you able to deal with?"
+        },
+        {
+          "text": "What are you able to understand?"
+        },
+        {
+          "text": "What are you capable of?"
+        },
+        {
+          "text": "What are you good at?"
+        },
+        {
+          "text": "What are your skills?"
+        },
+        {
+          "text": "What are you used for?"
+        },
+        {
+          "text": "What can I ask you to do?"
+        },
+        {
+          "text": "What do you do?"
+        },
+        {
+          "text": "What do you handle?"
+        },
+        {
+          "text": "What else can you help me with?"
+        },
+        {
+          "text": "What features are in here?"
+        },
+        {
+          "text": "What is this 4?"
+        },
+        {
+          "text": "What kinds of things can you do?"
+        },
+        {
+          "text": "Where can I find the frequently asked questions?"
+        }
+      ],
+      "description": "Request capabilities of the bot."
+    },
+    {
+      "intent": "General_Connect_to_Agent",
+      "examples": [
+        {
+          "text": "Agent help"
+        },
+        {
+          "text": "A real agent, please."
+        },
+        {
+          "text": "Call agent"
+        },
+        {
+          "text": "Can I connect to an agent?"
+        },
+        {
+          "text": "Can I speak to a human please?"
+        },
+        {
+          "text": "Can I speak to a live person?"
+        },
+        {
+          "text": "Can I speak to an advisor?"
+        },
+        {
+          "text": "Can I speak with somebody?"
+        },
+        {
+          "text": "Can I talk to someone?"
+        },
+        {
+          "text": "Can you assist me to connect to an agent?"
+        },
+        {
+          "text": "Can you connect me with a real person?"
+        },
+        {
+          "text": "Connect me to a live operator please."
+        },
+        {
+          "text": "Contact person"
+        },
+        {
+          "text": "Could you please transfer me to your master?"
+        },
+        {
+          "text": "Customer service representative please."
+        },
+        {
+          "text": "Do not want a robot?"
+        },
+        {
+          "text": "Hi can you transfer me"
+        },
+        {
+          "text": "How can I skip the recorded menu and go straight to a live person?"
+        },
+        {
+          "text": "I don't want to talk to a bot."
+        },
+        {
+          "text": "I don't want to talk to you"
+        },
+        {
+          "text": "I need to speak to a representative. How would I go about doing so?"
+        },
+        {
+          "text": "Is there anyone there I can actually talk to for real?"
+        },
+        {
+          "text": "I want agent"
+        },
+        {
+          "text": "I want a manager"
+        },
+        {
+          "text": "I want an agent to help me"
+        },
+        {
+          "text": "I want to talk to a person"
+        },
+        {
+          "text": "I would like to speak to a human"
+        },
+        {
+          "text": "I would like to speak to someone"
+        },
+        {
+          "text": "Need help from human"
+        },
+        {
+          "text": "Operator please"
+        },
+        {
+          "text": "Please assist me to get to an agent"
+        },
+        {
+          "text": "Please connect me to a live agent"
+        },
+        {
+          "text": "Please let me talk to a human being."
+        },
+        {
+          "text": "Pls connect"
+        },
+        {
+          "text": "Put me through to someone"
+        },
+        {
+          "text": "Send me to an agent"
+        },
+        {
+          "text": "Where is the closest agent?"
+        },
+        {
+          "text": "Yes, take me to a real person"
+        }
+      ],
+      "description": "Request a human agent."
+    },
+    {
+      "intent": "General_Ending",
+      "examples": [
+        {
+          "text": "Bye bye"
+        },
+        {
+          "text": "Bye now"
+        },
+        {
+          "text": "Catch you later"
+        },
+        {
+          "text": "Cya later"
+        },
+        {
+          "text": "Ending this session"
+        },
+        {
+          "text": "End trial"
+        },
+        {
+          "text": "Finished now, good bye"
+        },
+        {
+          "text": "Get lost"
+        },
+        {
+          "text": "Go away"
+        },
+        {
+          "text": "Going now"
+        },
+        {
+          "text": "Good. bye."
+        },
+        {
+          "text": "Goodbye"
+        },
+        {
+          "text": "Go off"
+        },
+        {
+          "text": "Have a nice day?"
+        },
+        {
+          "text": "Hey bot go away"
+        },
+        {
+          "text": "I am leaving"
+        },
+        {
+          "text": "I am out of here"
+        },
+        {
+          "text": "I d like to stop doing this"
+        },
+        {
+          "text": "I have got to go"
+        },
+        {
+          "text": "I'm done"
+        },
+        {
+          "text": "Im done"
+        },
+        {
+          "text": "Im good thank you"
+        },
+        {
+          "text": "I'm leaving now"
+        },
+        {
+          "text": "It was nice chatting with you"
+        },
+        {
+          "text": "I want to quit"
+        },
+        {
+          "text": "Ok goodbye"
+        },
+        {
+          "text": "See you"
+        },
+        {
+          "text": "See you later"
+        },
+        {
+          "text": "Shut up"
+        },
+        {
+          "text": "Stop doing this"
+        },
+        {
+          "text": "Stop talking to me"
+        },
+        {
+          "text": "Thanks, bye!"
+        },
+        {
+          "text": "Thanks very much, bye!"
+        },
+        {
+          "text": "Thank you for your time"
+        },
+        {
+          "text": "That is all"
+        },
+        {
+          "text": "That's everything"
+        },
+        {
+          "text": "Time to go"
+        }
+      ],
+      "description": "End the conversation."
+    },
+    {
+      "intent": "General_Greetings",
+      "examples": [
+        {
+          "text": "Good day"
+        },
+        {
+          "text": "Good evening"
+        },
+        {
+          "text": "Good morning"
+        },
+        {
+          "text": "Good to see you"
+        },
+        {
+          "text": "Greetings"
+        },
+        {
+          "text": "Have you been well?"
+        },
+        {
+          "text": "Hello"
+        },
+        {
+          "text": "Hello Agent"
+        },
+        {
+          "text": "Hello I am looking for some help here"
+        },
+        {
+          "text": "Hey how are you doing"
+        },
+        {
+          "text": "Hey there"
+        },
+        {
+          "text": "Hey there all"
+        },
+        {
+          "text": "Hey twin"
+        },
+        {
+          "text": "Hey you"
+        },
+        {
+          "text": "Hi advisor"
+        },
+        {
+          "text": "Hi there"
+        },
+        {
+          "text": "How are things going?"
+        },
+        {
+          "text": "How are you today?"
+        },
+        {
+          "text": "How have you been?"
+        },
+        {
+          "text": "How is it going?"
+        },
+        {
+          "text": "How r u?"
+        },
+        {
+          "text": "Looking good eve"
+        },
+        {
+          "text": "Ok take me back"
+        },
+        {
+          "text": "What's new?"
+        },
+        {
+          "text": "What's up?"
+        },
+        {
+          "text": "Who is this?"
+        },
+        {
+          "text": "You there"
+        }
+      ],
+      "description": "Greet the bot."
+    },
+    {
+      "intent": "General_Human_or_Bot",
+      "examples": [
+        {
+          "text": "Am I chatting with a human?"
+        },
+        {
+          "text": "Am I talking to a Bot?"
+        },
+        {
+          "text": "Am I talking to a person or am I talking to an AI?"
+        },
+        {
+          "text": "Am I talking to Watson?"
+        },
+        {
+          "text": "Are you a human or a bot?"
+        },
+        {
+          "text": "Are you a robot?"
+        },
+        {
+          "text": "Are you even real?"
+        },
+        {
+          "text": "Are you human?"
+        },
+        {
+          "text": "Are you real?"
+        },
+        {
+          "text": "How can you prove you are a human?"
+        },
+        {
+          "text": "Is this a computer?"
+        },
+        {
+          "text": "Tell me, are you a human or no?"
+        }
+      ],
+      "description": "Ask if speaking to a human or a bot."
+    },
+    {
+      "intent": "General_Negative_Feedback",
+      "examples": [
+        {
+          "text": "Do not like you?"
+        },
+        {
+          "text": "Everyone hates you"
+        },
+        {
+          "text": "Hate you"
+        },
+        {
+          "text": "I do not like you"
+        },
+        {
+          "text": "I hate this!"
+        },
+        {
+          "text": "I hate you"
+        },
+        {
+          "text": "It is annoying"
+        },
+        {
+          "text": "Quit annoying me"
+        },
+        {
+          "text": "Robots are boring"
+        },
+        {
+          "text": "Robots are stupid"
+        },
+        {
+          "text": "Stupid"
+        },
+        {
+          "text": "Why are you so annoying?"
+        },
+        {
+          "text": "Why are you stupid?"
+        },
+        {
+          "text": "You are having delusions"
+        },
+        {
+          "text": "You are on my nerves"
+        },
+        {
+          "text": "You are very frustrating"
+        },
+        {
+          "text": "You do not seem smart"
+        },
+        {
+          "text": "You're really frustrating"
+        },
+        {
+          "text": "You're really irritating"
+        },
+        {
+          "text": "You're too stupid"
+        }
+      ],
+      "description": "Express unfavorable feedback."
+    },
+    {
+      "intent": "General_Positive_Feedback",
+      "examples": [
+        {
+          "text": "Brilliant!"
+        },
+        {
+          "text": "Can't believe you are that good"
+        },
+        {
+          "text": "How cool is this?"
+        },
+        {
+          "text": "I like what you did there! :)"
+        },
+        {
+          "text": "I'm looking forward to working with you again! :)"
+        },
+        {
+          "text": "Love your work"
+        },
+        {
+          "text": "Ok thank you"
+        },
+        {
+          "text": "Thank you"
+        },
+        {
+          "text": "This is good"
+        },
+        {
+          "text": "This is great"
+        },
+        {
+          "text": "This is so cool"
+        },
+        {
+          "text": "You are awesome"
+        },
+        {
+          "text": "You are great"
+        },
+        {
+          "text": "You are the best"
+        },
+        {
+          "text": "You are wonderful"
+        },
+        {
+          "text": "You gave me exactly what I need!"
+        },
+        {
+          "text": "You're a genius!"
+        },
+        {
+          "text": "You the man"
+        },
+        {
+          "text": "You've been so helpful :)"
+        }
+      ],
+      "description": "Express positive sentiment or gratitude."
+    },
+    {
+      "intent": "General_Security_Assurance",
+      "examples": [
+        {
+          "text": "Are you safe?"
+        },
+        {
+          "text": "Are you safe on hackers?"
+        },
+        {
+          "text": "Can I be sure that my stored card details are held securely?"
+        },
+        {
+          "text": "Conversation secure?"
+        },
+        {
+          "text": "Customer info secured?"
+        },
+        {
+          "text": "Do you have protection against hacks?"
+        },
+        {
+          "text": "How do I know if my card info is kept safe?"
+        },
+        {
+          "text": "How do I know this chat is not a scam?"
+        },
+        {
+          "text": "How is my credit card info secured?"
+        },
+        {
+          "text": "How safe is my data?"
+        },
+        {
+          "text": "I'd like proof of a secure chat"
+        },
+        {
+          "text": "In what way can I tell if my plastic is safe?"
+        },
+        {
+          "text": "Is my card info secure?"
+        },
+        {
+          "text": "Is my payment information secure?"
+        },
+        {
+          "text": "Is there a reason to distrust this chat?"
+        },
+        {
+          "text": "Is this an official chat?"
+        },
+        {
+          "text": "Is this a trusted chat site?"
+        },
+        {
+          "text": "Is this conversation secure?"
+        },
+        {
+          "text": "Precautions hackers?"
+        },
+        {
+          "text": "Protection hacks?"
+        },
+        {
+          "text": "Secure conversation?"
+        },
+        {
+          "text": "What guards do you have in place to protect your customer's data?"
+        },
+        {
+          "text": "What makes this chat trustworthy?"
+        },
+        {
+          "text": "What safety measures are used to ensure that chat is secure?"
+        },
+        {
+          "text": "Why would I trust this chat?"
+        },
+        {
+          "text": "Will my conversation remain secured?"
+        }
+      ],
+      "description": "Express concerns about the security of the bot."
+    },
+    {
+      "intent": "query_data",
+      "examples": [
+        {
+          "text": "analyze",
+          "mentions": [
+            {
+              "entity": "analyze",
+              "location": [
+                0,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Find me something",
+          "mentions": [
+            {
+              "entity": "analyze",
+              "location": [
+                0,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Help me extract some info",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                21,
+                25
+              ]
+            },
+            {
+              "entity": "analyze",
+              "location": [
+                8,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I'd like to summarize my data",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                25,
+                29
+              ]
+            },
+            {
+              "entity": "analyze",
+              "location": [
+                12,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I have a question about my data",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                27,
+                31
+              ]
+            },
+            {
+              "entity": "analyze",
+              "location": [
+                9,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "I want to find something",
+          "mentions": [
+            {
+              "entity": "analyze",
+              "location": [
+                10,
+                14
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Query data",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                6,
+                10
+              ]
+            },
+            {
+              "entity": "analyze",
+              "location": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What can you tell me about my data?",
+          "mentions": [
+            {
+              "entity": "data",
+              "location": [
+                30,
+                34
+              ]
+            },
+            {
+              "entity": "analyze",
+              "location": [
+                13,
+                20
+              ]
+            }
+          ]
+        }
+      ],
+      "description": "Analyze and query user memories/data"
+    }
+  ],
+  "entities": [
+    {
+      "entity": "analyze",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "analyze",
+          "synonyms": [
+            "analyse",
+            "classify",
+            "extract",
+            "find",
+            "generate",
+            "inspect",
+            "query",
+            "summarize"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "extract",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "find",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Find me",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Query",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "question",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "summarize",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "tell me",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "app",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "algorithm",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "app",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "it",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Remem",
+          "synonyms": [
+            "algorithm",
+            "memory",
+            "ReMem",
+            "this app",
+            "website"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "this",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "used here",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "website",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "you",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "your",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "data",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "content",
+          "synonyms": [
+            "record"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "data",
+          "synonyms": [
+            "entered information",
+            "files",
+            "input",
+            "log",
+            "memory",
+            "personal data",
+            "personal information"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "files",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "info",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "information",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "input",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "memory",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "record",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-currency",
+      "values": []
+    },
+    {
+      "entity": "sys-date",
+      "values": []
+    },
+    {
+      "entity": "sys-number",
+      "values": []
+    },
+    {
+      "entity": "sys-percentage",
+      "values": []
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    }
+  ],
+  "metadata": {
+    "api_version": {
+      "major_version": "v2",
+      "minor_version": "2018-11-08"
+    },
+    "from-sample": true
+  },
+  "webhooks": [
+    {
+      "url": "",
+      "name": "main_webhook",
+      "headers": []
+    }
+  ],
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I didn't understand. You can try rephrasing."
+              },
+              {
+                "text": "Can you reword your statement? I'm not understanding."
+              },
+              {
+                "text": "I didn't get your meaning."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_9_1730344606447"
+      },
+      "conditions": "anything_else",
+      "digress_in": "does_not_return",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_4_1731128717005",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_8_1730353255926",
+      "event_name": "focus",
+      "dialog_node": "handler_1_1730353343795"
+    },
+    {
+      "type": "event_handler",
+      "parent": "slot_3_1730353344144",
+      "event_name": "input",
+      "dialog_node": "handler_2_1730353344166"
+    },
+    {
+      "type": "event_handler",
+      "parent": "node_8_1730353088156",
+      "event_name": "focus",
+      "dialog_node": "handler_2_1730353439557"
+    },
+    {
+      "type": "event_handler",
+      "output": {},
+      "parent": "slot_3_1730353344144",
+      "event_name": "focus",
+      "dialog_node": "handler_5_1730353344166",
+      "previous_sibling": "handler_2_1730353344166"
+    },
+    {
+      "type": "standard",
+      "title": "Business Understanding",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Approaching business understanding for ReMem involves recognizing the core value it brings to users: a personalized \"second memory\" that empowers individuals to store, query, and analyze their own historical data as if interacting with their own memories. To achieve this, it’s essential to clearly identify the user personas—such as individuals wanting to document personal insights, professionals seeking to track data-driven patterns over time, or those simply wanting to preserve memories and thoughts. By understanding these user needs, we can define ReMem’s value proposition, design user-centric features (such as memory querying, pattern analysis, and summarization), and position the product effectively within the market. Additionally, comprehending the importance of privacy and data ownership is key to addressing user concerns and creating trust in the platform. This approach ultimately guides ReMem’s functionality, marketing, and long-term growth strategy, ensuring it meets both business and user expectations."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#business_understanding",
+      "digress_in": "returns",
+      "dialog_node": "node_2_1731128936112",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_8_1730353255926"
+    },
+    {
+      "type": "standard",
+      "title": "Was this helpful?",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Was this feature helpful?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_6_1731128755454"
+      },
+      "dialog_node": "node_4_1731128717005",
+      "previous_sibling": "node_2_1731128936112"
+    },
+    {
+      "type": "standard",
+      "title": "Start",
+      "output": {
+        "generic": []
+      },
+      "context": {
+        "user_id": 0,
+        "user_name": "Guest"
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "Welcome"
+      },
+      "conditions": "conversation_start",
+      "dialog_node": "node_5_1730345419067",
+      "disambiguation_opt_out": true
+    },
+    {
+      "type": "standard",
+      "title": "What ReMem is",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "ReMem aims to work as a second memory. Upload or input \"memories\", or records of anything about your life; the text can be ANYTHING, as long as it has an identifiable date. From there, you can query your memory and \"remember\" using our smart generative AI. Using your memories data, you can ask for:\n\n- Summaries of date/time ranges, or of any pattern\n- Analysis, reasoning, and identifying patterns\n- Potential generation of new fake memories?!\n- Extracting key values from your data\n- Answering any questions, in general, about your data\n\nBasically, treat ReMem how you would your own memory!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ask_about_app_use",
+      "digress_in": "returns",
+      "dialog_node": "node_5_1730350838298",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_7_1730348540370"
+    },
+    {
+      "type": "standard",
+      "title": "Thanks for input",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Thanks for the input!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "node_4_1731128717005",
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "user_input",
+        "dialog_node": "node_9_1730344606447"
+      },
+      "dialog_node": "node_6_1731128755454"
+    },
+    {
+      "type": "standard",
+      "title": "Data Usage",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Your data, that is entered as input memory in this chat (file upload and API integrations coming soon!), is stored securely in an encrypted database and is linked to this account. If this is a guest account, it will all be deleted once you close this page (or after 12 hours of inactivity). If you made an account, secure authentication methods make sure your data is never seen by other accounts, and your data is not used to train AI models (only to generate analyses). It is stored as key-values, with the values being recognized objects/entities by this chat bot. ReMem uses secure OAuth authentication for creating and logging into an account, so you never have to worry about the security of your account.\n\nFor now, we don't store files; all the data we have from you is shown above, nothing hidden!!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ask_about_data || #General_Security_Assurance",
+      "digress_in": "returns",
+      "dialog_node": "node_7_1730348540370",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_9_1730344606447"
+    },
+    {
+      "type": "standard",
+      "title": "How ReMem works",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I am a chabot made using IBM watsonx Assistant. I take in your user input (file upload coming soon!), and send through a webhook API to ReMem's server. ReMem takes in your data (using secure authentication for transmission), and processes it (using python parsing methods) so that it is simpler to store. Then, it is available exactly as seen on this webpage. From there, you can ask to analyze or query the data; ReMem uses a hook into watsonx generative AI to produce the answer. It sends over all your data (for now) to the generative AI, along with your query, and shows the generated answer here in this chatbot. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "conditions": "#ask_about_app_workings",
+      "digress_in": "returns",
+      "dialog_node": "node_7_1730351280871",
+      "digress_out": "allow_all",
+      "previous_sibling": "node_5_1730350838298"
+    },
+    {
+      "type": "standard",
+      "title": "Input a memory",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This feature coming soon!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#add_memory",
+      "dialog_node": "node_8_1730353088156",
+      "previous_sibling": "node_7_1730351280871"
+    },
+    {
+      "type": "standard",
+      "title": "Query data",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "This feature coming soon!"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#query_data",
+      "dialog_node": "node_8_1730353255926",
+      "previous_sibling": "node_8_1730353088156"
+    },
+    {
+      "type": "standard",
+      "title": "Need Help",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I can help you with and talk about the following things:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "General Capabilities",
+            "options": [
+              {
+                "label": "What ReMem does",
+                "value": {
+                  "input": {
+                    "text": "What does it do?"
+                  }
+                }
+              },
+              {
+                "label": "Inner workings of ReMem",
+                "value": {
+                  "input": {
+                    "text": "How does this website work?"
+                  }
+                }
+              },
+              {
+                "label": "Add a memory",
+                "value": {
+                  "input": {
+                    "text": "Add a memory"
+                  }
+                }
+              },
+              {
+                "label": "Analyze my memories",
+                "value": {
+                  "input": {
+                    "text": "analyze"
+                  }
+                }
+              },
+              {
+                "label": "Data usage",
+                "value": {
+                  "input": {
+                    "text": "data"
+                  }
+                }
+              },
+              {
+                "label": "Start over",
+                "value": {
+                  "input": {
+                    "text": "welcome"
+                  }
+                }
+              },
+              {
+                "label": "Business Understanding",
+                "value": {
+                  "input": {
+                    "text": "What is the business understanding?"
+                  }
+                }
+              }
+            ],
+            "preference": "button",
+            "response_type": "option"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "conditions": "#Bot_Control_Change_Subject || #Bot_Control_Reject_Response || #Bot_Control_Start_Over || #General_Agent_Capabilities",
+      "digress_in": "does_not_return",
+      "dialog_node": "node_9_1730344606447",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi $user_name ! I'm the assistant for ReMem, a website made to serve as your second memory. Give me records and memories, and I'll remember them for you and more: I'll summarize, provide insights, and help you find patterns. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "parent": "Welcome",
+      "disabled": true,
+      "dialog_node": "response_2_1730347304523"
+    },
+    {
+      "type": "response_condition",
+      "output": {},
+      "parent": "node_8_1730353088156",
+      "disabled": true,
+      "conditions": "$action_result_1",
+      "dialog_node": "response_2_1730353128727",
+      "previous_sibling": "handler_2_1730353439557"
+    },
+    {
+      "type": "response_condition",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "I can help you with and talk about the following things:"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          },
+          {
+            "title": "General Capabilities",
+            "options": [
+              {
+                "label": "Start over",
+                "value": {
+                  "input": {
+                    "text": "welcome"
+                  }
+                }
+              },
+              {
+                "label": "What ReMem does",
+                "value": {
+                  "input": {
+                    "text": "What does this app do?"
+                  }
+                }
+              },
+              {
+                "label": "Inner workings of ReMem",
+                "value": {
+                  "input": {
+                    "text": "How does this website work?"
+                  }
+                }
+              },
+              {
+                "label": "Data usage",
+                "value": {
+                  "input": {
+                    "text": "data"
+                  }
+                }
+              },
+              {
+                "label": "",
+                "value": {
+                  "input": {
+                    "text": ""
+                  }
+                }
+              }
+            ],
+            "response_type": "option"
+          }
+        ]
+      },
+      "parent": "node_9_1730344606447",
+      "disabled": true,
+      "dialog_node": "response_4_1730347369874"
+    },
+    {
+      "type": "response_condition",
+      "output": {},
+      "parent": "node_8_1730353088156",
+      "disabled": true,
+      "conditions": "anything_else",
+      "dialog_node": "response_5_1730353129403",
+      "previous_sibling": "response_2_1730353128727"
+    },
+    {
+      "type": "response_condition",
+      "output": {},
+      "parent": "node_8_1730353255926",
+      "disabled": true,
+      "conditions": "anything_else",
+      "dialog_node": "response_5_1730353307495",
+      "previous_sibling": "response_6_1730353306709"
+    },
+    {
+      "type": "response_condition",
+      "output": {},
+      "parent": "node_8_1730353255926",
+      "disabled": true,
+      "conditions": "$action_result_1",
+      "dialog_node": "response_6_1730353306709",
+      "previous_sibling": "slot_3_1730353344144"
+    },
+    {
+      "type": "slot",
+      "parent": "node_8_1730353255926",
+      "dialog_node": "slot_3_1730353344144",
+      "previous_sibling": "handler_1_1730353343795"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi $user_name ! I'm the assistant for ReMem, a website made to serve as your second memory. Give me records and memories, and I'll remember them for you and more: I'll summarize, provide insights, and help you find patterns. "
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {
+        "_customization": {
+          "mcr": false
+        }
+      },
+      "next_step": {
+        "behavior": "jump_to",
+        "selector": "body",
+        "dialog_node": "node_9_1730344606447"
+      },
+      "conditions": "welcome || #General_Greetings",
+      "digress_in": "does_not_return",
+      "dialog_node": "Welcome",
+      "previous_sibling": "node_5_1730345419067"
+    }
+  ],
+  "counterexamples": [],
+  "system_settings": {
+    "nlp": {
+      "model": "latest"
+    },
+    "disambiguation": {
+      "enabled": true,
+      "randomize": true,
+      "suggestion_text_policy": "title",
+      "none_of_the_above_prompt": "None of the above."
+    }
+  },
+  "learning_opt_out": false,
+  "language": "en",
+  "description": "created for assistant cc72b848-7bc4-41c3-aafd-f1e541a0a70f",
+  "name": "Remem-Project-Assistant-dialog"
+}
