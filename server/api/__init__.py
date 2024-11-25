@@ -3,6 +3,7 @@
 ##########################################
 
 import logging
+import sys
 
 from flask import Flask
 from flask_cors import CORS
@@ -18,10 +19,7 @@ from common.utils import safe_get_env_var
 
 def create_app():
 
-    # Configure pymongo logging
-    logging.basicConfig(level=logging.DEBUG)  # Set logging level to DEBUG
-    logger = logging.getLogger('pymongo')  # Get the pymongo logger
-    logger.setLevel(logging.DEBUG)  # Set the level for pymongo logs
+
 
     ##########################################
     # Environment Variables
@@ -39,6 +37,10 @@ def create_app():
     # Enable Flask's built-in debug logging
     app.config['DEBUG'] = True
     app.config['PROPAGATE_EXCEPTIONS'] = True
+    app.debug = True
+
+    logging.basicConfig(level=logging.DEBUG)
+    app.logger.addHandler(logging.StreamHandler(sys.stdout))
 
     ##########################################
     # HTTP Security Headers
@@ -64,9 +66,9 @@ def create_app():
     @app.after_request
     def add_headers(response):
         response.headers['X-XSS-Protection'] = '0'
-        response.headers['Cache-Control'] = 'no-store, max-age=0, must-revalidate'
-        response.headers['Pragma'] = 'no-cache'
-        response.headers['Expires'] = '0'
+        # response.headers['Cache-Control'] = 'no-store, max-age=0, must-revalidate'
+        # response.headers['Pragma'] = 'no-cache'
+        # response.headers['Expires'] = '0'
         response.headers['Content-Type'] = 'application/json; charset=utf-8'
         response.headers['Strict-Transport-Security'] = 'max-age=31536000; includeSubDomains'
         return response

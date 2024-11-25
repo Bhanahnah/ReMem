@@ -8,14 +8,26 @@ from datetime import datetime
 from bson import ObjectId
 # from pydantic_core import core_schema
 
-from pydantic import BaseModel, Field, ConfigDict, EmailStr
+from pydantic import BaseModel, Field, ConfigDict, EmailStr, ValidationError
 # from pydantic.json_schema import JsonSchemaValue
-from pydantic.functional_validators import BeforeValidator
+from pydantic.functional_validators import BeforeValidator, AfterValidator
+from pydantic.functional_serializers import PlainSerializer
+
+
+def _make_objectid(v: Any) -> Any:
+    if v is None:
+        return v
+    if not ObjectId.is_valid(v):
+        raise ValidationError(f"Invalid ObjectId given: {v}")
+    return ObjectId(v)
 
 # Represents an ObjectId field in the database.
 # It will be represented as a `str` on the model so that it can be serialized to JSON.
 # TODO: figure out how to represent/validate as ObjectId not str???
-PyObjectId = Annotated[str, BeforeValidator(str)]
+# PyObjectId = Annotated[str, AfterValidator(_check_valid_objectid)]
+PyObjectId = Annotated[ObjectId,
+                       BeforeValidator(_make_objectid),
+                       PlainSerializer(str, return_type=str, when_used='json-unless-none')]
 
 # class ObjectIdPydanticAnnotation:
 #     """Def for the ObjectId property of every model in MongoDB collections (why need this?)"""
@@ -55,8 +67,18 @@ class MongoDBModel(BaseModel):
         arbitrary_types_allowed=True
     )
 
-    def get(self, exclude=None):
-        return self.model_dump(exclude_none=True, exclude=exclude)
+    def get(self, exclude: list[str] = None):
+        return self.model_dump(exclude_none=True, exclude=exclude, by_alias=True)
+
+    def get_str(self, exclude: list[str] = None):
+        """When PyObjectId wanted as str"""
+        d = self.get(exclude)
+        # Skip if no _id
+        if "_id" in d:
+            d["id"] = str(d["_id"])
+            del d["_id"]
+        return d
+
 
 
 class UserInfoModel(MongoDBModel):
@@ -80,7 +102,13 @@ class TextInputModel(MongoDBModel):
     created_dt: datetime
     data_dt: datetime = None
     data_rawtext: str = None
-    data_entities: Optional[dict] = None
+    data_parsed: Optional[dict] = None
+
+    def get_str(self, exclude: list[str] = None):
+        """When PyObjectId wanted as str"""
+        d = super().get_str(exclude)
+        d["userid"] = str(d["userid"])
+        return d
 
 
 class TextInputCollection(BaseModel):

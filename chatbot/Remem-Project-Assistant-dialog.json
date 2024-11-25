@@ -8,10 +8,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                6,
-                12
-              ]
+              "location": [6, 12]
             }
           ]
         },
@@ -20,10 +17,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                11,
-                16
-              ]
+              "location": [11, 16]
             }
           ]
         },
@@ -32,10 +26,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                11,
-                22
-              ]
+              "location": [11, 22]
             }
           ]
         },
@@ -44,10 +35,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                17,
-                21
-              ]
+              "location": [17, 21]
             }
           ]
         },
@@ -56,10 +44,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                8,
-                14
-              ]
+              "location": [8, 14]
             }
           ]
         },
@@ -68,10 +53,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                30,
-                35
-              ]
+              "location": [30, 35]
             }
           ]
         },
@@ -80,10 +62,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                9,
-                13
-              ]
+              "location": [9, 13]
             }
           ]
         },
@@ -92,10 +71,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                6,
-                11
-              ]
+              "location": [6, 11]
             }
           ]
         },
@@ -104,10 +80,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                11,
-                15
-              ]
+              "location": [11, 15]
             }
           ]
         }
@@ -122,10 +95,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                10,
-                12
-              ]
+              "location": [10, 12]
             }
           ]
         },
@@ -134,10 +104,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                27,
-                30
-              ]
+              "location": [27, 30]
             }
           ]
         },
@@ -149,10 +116,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                8,
-                12
-              ]
+              "location": [8, 12]
             }
           ]
         },
@@ -161,10 +125,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                8,
-                12
-              ]
+              "location": [8, 12]
             }
           ]
         },
@@ -176,10 +137,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                18,
-                22
-              ]
+              "location": [18, 22]
             }
           ]
         },
@@ -191,10 +149,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                22,
-                29
-              ]
+              "location": [22, 29]
             }
           ]
         }
@@ -209,10 +164,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                30,
-                37
-              ]
+              "location": [30, 37]
             }
           ]
         },
@@ -221,10 +173,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                9,
-                16
-              ]
+              "location": [9, 16]
             }
           ]
         },
@@ -233,10 +182,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                9,
-                16
-              ]
+              "location": [9, 16]
             }
           ]
         },
@@ -245,10 +191,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                9,
-                11
-              ]
+              "location": [9, 11]
             }
           ]
         },
@@ -260,10 +203,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                35,
-                42
-              ]
+              "location": [35, 42]
             }
           ]
         },
@@ -272,10 +212,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                27,
-                36
-              ]
+              "location": [27, 36]
             }
           ]
         },
@@ -287,10 +224,7 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                18,
-                21
-              ]
+              "location": [18, 21]
             }
           ]
         },
@@ -308,10 +242,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                0,
-                4
-              ]
+              "location": [0, 4]
             }
           ]
         },
@@ -320,17 +251,11 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                7,
-                10
-              ]
+              "location": [7, 10]
             },
             {
               "entity": "data",
-              "location": [
-                18,
-                22
-              ]
+              "location": [18, 22]
             }
           ]
         },
@@ -339,10 +264,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                7,
-                11
-              ]
+              "location": [7, 11]
             }
           ]
         },
@@ -351,17 +273,11 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                15,
-                18
-              ]
+              "location": [15, 18]
             },
             {
               "entity": "data",
-              "location": [
-                34,
-                38
-              ]
+              "location": [34, 38]
             }
           ]
         },
@@ -370,10 +286,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                12,
-                16
-              ]
+              "location": [12, 16]
             }
           ]
         },
@@ -382,10 +295,7 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                13,
-                17
-              ]
+              "location": [13, 17]
             }
           ]
         },
@@ -394,17 +304,11 @@
           "mentions": [
             {
               "entity": "app",
-              "location": [
-                7,
-                10
-              ]
+              "location": [7, 10]
             },
             {
               "entity": "data",
-              "location": [
-                16,
-                20
-              ]
+              "location": [16, 20]
             }
           ]
         }
@@ -1697,10 +1601,7 @@
           "mentions": [
             {
               "entity": "analyze",
-              "location": [
-                0,
-                7
-              ]
+              "location": [0, 7]
             }
           ]
         },
@@ -1709,10 +1610,7 @@
           "mentions": [
             {
               "entity": "analyze",
-              "location": [
-                0,
-                7
-              ]
+              "location": [0, 7]
             }
           ]
         },
@@ -1721,17 +1619,11 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                21,
-                25
-              ]
+              "location": [21, 25]
             },
             {
               "entity": "analyze",
-              "location": [
-                8,
-                15
-              ]
+              "location": [8, 15]
             }
           ]
         },
@@ -1740,17 +1632,11 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                25,
-                29
-              ]
+              "location": [25, 29]
             },
             {
               "entity": "analyze",
-              "location": [
-                12,
-                21
-              ]
+              "location": [12, 21]
             }
           ]
         },
@@ -1759,17 +1645,11 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                27,
-                31
-              ]
+              "location": [27, 31]
             },
             {
               "entity": "analyze",
-              "location": [
-                9,
-                17
-              ]
+              "location": [9, 17]
             }
           ]
         },
@@ -1778,10 +1658,7 @@
           "mentions": [
             {
               "entity": "analyze",
-              "location": [
-                10,
-                14
-              ]
+              "location": [10, 14]
             }
           ]
         },
@@ -1790,17 +1667,11 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                6,
-                10
-              ]
+              "location": [6, 10]
             },
             {
               "entity": "analyze",
-              "location": [
-                0,
-                5
-              ]
+              "location": [0, 5]
             }
           ]
         },
@@ -1809,17 +1680,11 @@
           "mentions": [
             {
               "entity": "data",
-              "location": [
-                30,
-                34
-              ]
+              "location": [30, 34]
             },
             {
               "entity": "analyze",
-              "location": [
-                13,
-                20
-              ]
+              "location": [13, 20]
             }
           ]
         }
@@ -1904,13 +1769,7 @@
         {
           "type": "synonyms",
           "value": "Remem",
-          "synonyms": [
-            "algorithm",
-            "memory",
-            "ReMem",
-            "this app",
-            "website"
-          ]
+          "synonyms": ["algorithm", "memory", "ReMem", "this app", "website"]
         },
         {
           "type": "synonyms",
@@ -1946,9 +1805,7 @@
         {
           "type": "synonyms",
           "value": "content",
-          "synonyms": [
-            "record"
-          ]
+          "synonyms": ["record"]
         },
         {
           "type": "synonyms",

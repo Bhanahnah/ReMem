@@ -1,10 +1,26 @@
 import datetime
 import os
+import logging
+import sys
 
 from dotenv import load_dotenv
 from pymongo import MongoClient
 
 from api.mongodb.models import *
+
+# Configure pymongo logging
+logging.basicConfig(level=logging.DEBUG)  # Set logging level to DEBUG
+# logger = logging.getLogger('pymongo')  # Get the pymongo logger
+# logger.setLevel(logging.DEBUG)  # Set the level for pymongo logs
+
+root = logging.getLogger('pymongo')
+root.setLevel(logging.DEBUG)
+
+handler = logging.StreamHandler(sys.stdout)
+handler.setLevel(logging.DEBUG)
+handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+root.addHandler(handler)
+root.setLevel(logging.DEBUG)
 
 
 class UsersCRUD():
@@ -16,7 +32,32 @@ class UsersCRUD():
 
 
     def __init__(self, uri=None):
+
+        # Configure pymongo logging
+        logging.basicConfig(level=logging.DEBUG)  # Set logging level to DEBUG
+        # logger = logging.getLogger('pymongo')  # Get the pymongo logger
+        # logger.setLevel(logging.DEBUG)  # Set the level for pymongo logs
+
+        root = logging.getLogger('pymongo')
+        root.setLevel(logging.DEBUG)
+
+        # Clear existing handlers
+        for handler in root.handlers[:]:
+            root.removeHandler(handler)
+
+        handler = logging.StreamHandler(sys.stdout)
+        handler.setLevel(logging.DEBUG)
+        handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+        root.addHandler(handler)
+        root.setLevel(logging.DEBUG)
+
         self.client = self.get_mongo_client(uri=uri)
+
+        logging.getLogger('pymongo').debug("Test debug message from pymongo logger")
+        print("This is a sys.stdout test", file=sys.stdout)
+
+        self.list_dbs()
+
 
     @classmethod
     def get_mongo_client(cls, uri=None):
@@ -45,7 +86,7 @@ class UsersCRUD():
 
     def get_user_info(self, data: UserInfoModel) -> UserInfoModel | None:
         result = self.user_info().find_one(data.get())
-        return UserInfoModel.model_validate_json(result) if result else None
+        return UserInfoModel.model_validate(result) if result else None
 
     def create_update_user_info(self, data: UserInfoModel) -> tuple[bool, bool, str]:
         created = False

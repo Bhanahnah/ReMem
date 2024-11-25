@@ -1,4 +1,5 @@
 from datetime import datetime
+import sys
 
 from flask import Blueprint, g, request, jsonify, Response
 from pydantic import ValidationError, BaseModel
@@ -21,7 +22,7 @@ class GetCreateResponse(UserInfoModel):
     desc: str
 
     def resp(self, status=200):
-        return Response(self.get(), mimetype="application/json", status=status)
+        return jsonify(self.get_str()), status
 
 # @bp.route("/public")
 # def public():
@@ -33,10 +34,13 @@ class GetCreateResponse(UserInfoModel):
 def protected():
     print(g.get("access_token"), g.get("access_token").get("permissions"))
     try:
-        print(jsonify(**request.json))
+        print(str(request.json))
         data = UserInfoModel(**request.json, created_dt = datetime.now())
+        print(data.get())
         # Have id already, fetching info
         if data.id:
+            print("HERE1")
+
             db_data = db.get_user_info(UserInfoModel(id=data.id, authid=data.authid))
             created=False
             if not db_data:
@@ -45,22 +49,31 @@ def protected():
                                      desc="FAILED!!! WHY???").resp(400)
         # Do not have id, create and/or get it
         else:
+            print("HERE2")
             success, created, userid = db.create_update_user_info(data)
             if not success:
+                print("HERE3")
                 return GetCreateResponse(**data.get(),
                                         wascreated=created,
                                         desc="FAILED 2!!! WHY???").resp(400)
+            print(success, created, userid)
+            print(UserInfoModel(id=userid, authid=data.authid).get())
             db_data = db.get_user_info(UserInfoModel(id=userid, authid=data.authid))
             if not db_data:
-                return GetCreateResponse(**data.get(),
-                                     wascreated=created,
-                                     desc="FAILED!!! WHY???").resp(400)
+                print("HERE4")
+                sys.stdout.flush()
+                return jsonify(**{"why": "MAYBE THIS WORKS"}), 502
+                # return GetCreateResponse(**data.get(),
+                #                      wascreated=created,
+                #                      desc="FAILED 3!!! WHY???").resp(400)
+        print("HERE5")
         return GetCreateResponse(**db_data.get(),
                                  wascreated=created,
                                  desc="Successfully created/updated/retrieved"
                                  ).resp(200)
     except Exception as error:
-        return jsonify(error.with_traceback()), 400
+        print(error)
+        return jsonify(error), 400
 
 
 # @bp.route("/admin")

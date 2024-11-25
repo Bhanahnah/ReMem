@@ -3,15 +3,10 @@ import React from "react";
 import { PageLoader } from "./components/page-loader";
 import { AuthenticationGuard } from "./components/authentication-guard";
 import { Route, Routes } from "react-router-dom";
-import { AdminPage } from "./pages/admin-page";
 import { CallbackPage } from "./pages/callback-page";
 import { HomePage } from "./pages/home-page";
 import { NotFoundPage } from "./pages/not-found-page";
-import { ProfilePage } from "./pages/profile-page";
-import { ProtectedPage } from "./pages/protected-page";
-import { PublicPage } from "./pages/public-page";
 import { DashboardPage } from "./pages/dashboard-page";
-import { ChatbotPage } from "./pages/test-chatbot-page";
 
 export const App: React.FC = () => {
   const { isLoading } = useAuth0();
@@ -25,28 +20,13 @@ export const App: React.FC = () => {
   }
   return (
     <Routes>
-      <Route path="/" element={<ChatbotPage />} />
-
-      {/* TODO: MAKE WORK EVENTUALLY
+      {/* <Route path="/" element={<ChatbotPage />} /> */}
       <Route path="/" element={<HomePage />} />
       <Route
         path="/dashboard"
         element={<AuthenticationGuard component={DashboardPage} />}
       />
-      <Route
-        path="/profile"
-        element={<AuthenticationGuard component={ProfilePage} />}
-      />
-      <Route path="/public" element={<PublicPage />} />
-      <Route
-        path="/protected"
-        element={<AuthenticationGuard component={ProtectedPage} />}
-      />
-      <Route
-        path="/admin"
-        element={<AuthenticationGuard component={AdminPage} />}
-      />
-      <Route path="/callback" element={<CallbackPage />} /> */}
+      <Route path="/callback" element={<CallbackPage />} />
       <Route path="*" element={<NotFoundPage />} />
     </Routes>
   );

@@ -1,7 +1,8 @@
 import React from "react";
-import { NavBar } from "./navigation/desktop/nav-bar";
-import { MobileNavBar } from "./navigation/mobile/mobile-nav-bar";
+import { Container } from "react-bootstrap";
+
 import { PageFooter } from "./page-footer";
+import { NavBar } from "./navigation/navbar";
 
 interface Props {
   children: JSX.Element;
@@ -9,11 +10,9 @@ interface Props {
 
 export const PageLayout: React.FC<Props> = ({ children }) => {
   return (
-    <div className="page-layout">
+    <Container fluid>
       <NavBar />
-      <MobileNavBar />
-      <div className="page-layout__content">{children}</div>
-      <PageFooter />
-    </div>
+      {children}
+    </Container>
   );
 };
