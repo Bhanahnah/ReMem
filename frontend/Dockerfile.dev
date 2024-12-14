@@ -1,11 +1,11 @@
 # Pull latest official node image
-FROM node:latest
+FROM --platform=linux/amd64 node:latest
 
 # Expose ports
 EXPOSE 4040
 EXPOSE 6060
 # Enable hot reloading during development
-EXPOSE 35729
+# EXPOSE 35729
 
 # Set working directory
 WORKDIR /app

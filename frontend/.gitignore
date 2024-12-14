@@ -1,3 +1,10 @@
+## CUSTOM:
+
+# Hack to get secrets/env variables passed during runtime to work
+# Source: https://www.freecodecamp.org/news/how-to-implement-runtime-environment-variables-with-create-react-app-docker-and-nginx-7f9d42a91d70/
+public/env.js
+env.js
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/macos,windows,jetbrains+all,visualstudiocode,node
 # Edit at https://www.toptal.com/developers/gitignore?templates=macos,windows,jetbrains+all,visualstudiocode,node

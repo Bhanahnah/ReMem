@@ -22,12 +22,17 @@ import {
   WebChatContainer,
   setEnableDebug,
   WebChatConfig,
+  WebChatInstance,
 } from "@ibm-watson/assistant-web-chat-react";
 
+import ExData from "src/components/ex_data";
+
 const webChatOptions: WebChatConfig = {
-  integrationID: "c783320d-572e-4f91-a009-7b4db38968ed",
-  region: "us-south",
-  serviceInstanceID: "11a6895d-e806-4e3e-a2e8-97bd95e35312",
+  integrationID: window._env_.WATSONX_INTEGRATION_ID ?? "none",
+  // @ts-ignore
+  region: window._env_.WATSONX_REGION ?? "local",
+  serviceInstanceID: window._env_.WATSONX_SERVICE_INSTANCE_ID ?? "none",
+  openChatByDefault: true,
   // subscriptionID: 'only on enterprise plans',
   // Note that there is no onLoad property here. The WebChatContainer component will override it.
   // Use the onBeforeRender or onAfterRender prop instead.
@@ -41,6 +46,9 @@ export const DashboardPage: React.FC = () => {
   const [message, setMessage] = useState<string>("");
   const [userInfo, setUserInfo] = useState<GetCreateResponse | null>(null);
   const { getAccessTokenSilently, user } = useAuth0<Auth0UserProfile>();
+  const [chatInstance, setChatInstance] = useState<WebChatInstance | null>(
+    null
+  );
 
   useEffect(() => {
     let isMounted = true;
@@ -76,12 +84,32 @@ export const DashboardPage: React.FC = () => {
     };
   }, [getAccessTokenSilently, user]);
 
+  useEffect(() => {
+    chatInstance?.restartConversation();
+
+    /// Cleanup function?
+    return () => {
+      chatInstance?.destroySession();
+    };
+  }, [chatInstance]);
+
+  function onChatBeforeRender(i: WebChatInstance): Promise<void> {
+    // Do any other work you might want to do before rendering. If you don't need any other work here, you can just use
+    // onBeforeRender={setInstance} in the component above.
+    return new Promise<void>(() => {
+      // Make the instance available to the React components.
+      setChatInstance(i);
+    });
+  }
+
   return (
     <PageLayout>
       <Container>
         <Col>
           <h1>Dashboard</h1>
-          <div className="content__body">
+          <ExData></ExData>
+
+          {/* <div className="content__body">
             {userInfo ? (
               <DisplayObj data={userInfo} title="User Info" />
             ) : (
@@ -93,10 +121,13 @@ export const DashboardPage: React.FC = () => {
               <p>Loading Auth0 user information...</p>
             )}
             <CodeSnippet title="Protected Message" code={message} />
-          </div>
+          </div> */}
         </Col>
         <Col>
-          <WebChatContainer config={webChatOptions} />
+          <WebChatContainer
+            config={webChatOptions}
+            onAfterRender={(i) => onChatBeforeRender(i)}
+          />
         </Col>
       </Container>
     </PageLayout>

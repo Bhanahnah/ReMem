@@ -12,7 +12,7 @@ const DisplayObj: React.FC<DisplayObjectPropertiesProps> = ({
 }) => {
   const renderObject = (obj: Record<string, any>) => {
     return (
-      <Table borderless>
+      <Table borderless responsive="lg" size="sm">
         <tbody>
           {Object.entries(obj).map(([key, value]) => (
             <tr key={key}>
@@ -36,7 +36,7 @@ const DisplayObj: React.FC<DisplayObjectPropertiesProps> = ({
 
   return (
     <div>
-      {title && <h3>{title}</h3>}
+      {title && <h5>{title}</h5>}
       {renderObject(data)} {/* Call the renderObject function to render data */}
     </div>
   );

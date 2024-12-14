@@ -38,33 +38,34 @@ class UsersCRUD():
         # logger = logging.getLogger('pymongo')  # Get the pymongo logger
         # logger.setLevel(logging.DEBUG)  # Set the level for pymongo logs
 
-        root = logging.getLogger('pymongo')
-        root.setLevel(logging.DEBUG)
+        roots = [logging.getLogger('pymongo.command'), logging.getLogger('pymongo.connection')]
+        for root in roots:
+            root.setLevel(logging.DEBUG)
+            # Clear existing handlers
+            for handler in root.handlers[:]:
+                root.removeHandler(handler)
 
-        # Clear existing handlers
-        for handler in root.handlers[:]:
-            root.removeHandler(handler)
-
-        handler = logging.StreamHandler(sys.stdout)
-        handler.setLevel(logging.DEBUG)
-        handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
-        root.addHandler(handler)
-        root.setLevel(logging.DEBUG)
+            handler = logging.StreamHandler(sys.stdout)
+            handler.setLevel(logging.DEBUG)
+            handler.setFormatter(logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s'))
+            root.addHandler(handler)
+            root.setLevel(logging.DEBUG)
+        logging.getLogger('pymongo').debug("Test debug message from pymongo logger")
 
         self.client = self.get_mongo_client(uri=uri)
 
-        logging.getLogger('pymongo').debug("Test debug message from pymongo logger")
-        print("This is a sys.stdout test", file=sys.stdout)
+
 
         self.list_dbs()
 
 
     @classmethod
     def get_mongo_client(cls, uri=None):
-        if not uri:
+        if uri is None:
             # Load config from a .env file:
             load_dotenv()
-            MONGODB_URI = os.environ['MONGODB_URI']
+            # TODO: .strip() STUPID WORKAROUND FOR DOCKER RUN NOT LOADING ENV PROPERLY!!!!!!!!!
+            MONGODB_URI = os.environ['MONGODB_URI'].strip("\"")
         else:
             MONGODB_URI = uri
         # Connect to your MongoDB cluster:
@@ -84,9 +85,17 @@ class UsersCRUD():
     def text_input(self):
         return self.client[self.udata][self.data_coll]
 
-    def get_user_info(self, data: UserInfoModel) -> UserInfoModel | None:
+    def get_user_info(self, data: UserInfoModel | GetUserModel) -> UserInfoModel | None:
         result = self.user_info().find_one(data.get())
         return UserInfoModel.model_validate(result) if result else None
+
+    def create_text_input(self, data: TextInputModel):
+        try:
+            self.text_input().insert_one(data.get())
+            return True
+        except Exception as error:
+            return False
+
 
     def create_update_user_info(self, data: UserInfoModel) -> tuple[bool, bool, str]:
         created = False

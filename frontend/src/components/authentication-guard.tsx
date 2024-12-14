@@ -11,7 +11,7 @@ export const AuthenticationGuard: React.FC<AuthenticationGuardProps> = ({
 }) => {
   const Component = withAuthenticationRequired(component, {
     onRedirecting: () => (
-      <div className="page-layout">
+      <div>
         <PageLoader />
       </div>
     ),

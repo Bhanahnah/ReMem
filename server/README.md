@@ -52,6 +52,12 @@ Run the project in development mode:
 flask run
 ```
 
+Or to use the gunicorn setup:
+
+```bash
+dotenv -f .env run dotenv -f .flaskenv run gunicorn
+```
+
 ## API Endpoints
 
 The API server defines the following endpoints:

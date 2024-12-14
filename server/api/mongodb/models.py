@@ -80,6 +80,9 @@ class MongoDBModel(BaseModel):
         return d
 
 
+class GetUserModel(MongoDBModel):
+    id: PyObjectId = Field(alias="_id")
+
 
 class UserInfoModel(MongoDBModel):
     authid: str
@@ -99,9 +102,9 @@ class UserInfoCollection(BaseModel):
 
 class TextInputModel(MongoDBModel):
     userid: PyObjectId
-    created_dt: datetime
+    created_dt: datetime = None
     data_dt: datetime = None
-    data_rawtext: str = None
+    data_rawtext: str
     data_parsed: Optional[dict] = None
 
     def get_str(self, exclude: list[str] = None):
@@ -113,3 +116,7 @@ class TextInputModel(MongoDBModel):
 
 class TextInputCollection(BaseModel):
     text_input: List[TextInputModel]
+
+
+class DataStreamModel(BaseModel):
+    userid: PyObjectId

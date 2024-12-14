@@ -163,3 +163,5 @@ cython_debug/
 gcp_creds.json
 scripts/google-cloud-sdk-mac
 scripts/google-cloud-sdk-linux
+server/server.crt
+server/server.key

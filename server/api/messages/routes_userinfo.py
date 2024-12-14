@@ -33,14 +33,13 @@ class GetCreateResponse(UserInfoModel):
 @authorization_guard
 def protected():
     print(g.get("access_token"), g.get("access_token").get("permissions"))
+    print(request.origin)
     try:
         print(str(request.json))
         data = UserInfoModel(**request.json, created_dt = datetime.now())
         print(data.get())
         # Have id already, fetching info
         if data.id:
-            print("HERE1")
-
             db_data = db.get_user_info(UserInfoModel(id=data.id, authid=data.authid))
             created=False
             if not db_data:
@@ -49,10 +48,8 @@ def protected():
                                      desc="FAILED!!! WHY???").resp(400)
         # Do not have id, create and/or get it
         else:
-            print("HERE2")
             success, created, userid = db.create_update_user_info(data)
             if not success:
-                print("HERE3")
                 return GetCreateResponse(**data.get(),
                                         wascreated=created,
                                         desc="FAILED 2!!! WHY???").resp(400)
@@ -60,13 +57,11 @@ def protected():
             print(UserInfoModel(id=userid, authid=data.authid).get())
             db_data = db.get_user_info(UserInfoModel(id=userid, authid=data.authid))
             if not db_data:
-                print("HERE4")
                 sys.stdout.flush()
                 return jsonify(**{"why": "MAYBE THIS WORKS"}), 502
                 # return GetCreateResponse(**data.get(),
                 #                      wascreated=created,
                 #                      desc="FAILED 3!!! WHY???").resp(400)
-        print("HERE5")
         return GetCreateResponse(**db_data.get(),
                                  wascreated=created,
                                  desc="Successfully created/updated/retrieved"

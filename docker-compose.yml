@@ -4,7 +4,7 @@ services:
     build:
       context: ./server
       dockerfile: Dockerfile
-    image: us-south1-docker.pkg.dev/remem-440605/remem-images/dev-backend-api:latest
+    image: us-south1-docker.pkg.dev/remem-440605/remem-images/server-api:dev
     ports:
       - 6060:6060
     env_file:
@@ -21,7 +21,7 @@ services:
     build:
       context: ./frontend
       dockerfile: Dockerfile
-    image: us-south1-docker.pkg.dev/remem-440605/remem-images/dev-frontend-website:latest
+    image: us-south1-docker.pkg.dev/remem-440605/remem-images/frontend-website:dev
     ports:
       - 4040:4040
       - 80:80

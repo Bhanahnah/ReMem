@@ -6,15 +6,17 @@ import {
   UserInfoPayload,
 } from "src/models/api-models";
 
-const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
+// const apiServerUrl = process.env.REACT_APP_API_SERVER_URL;
+const apiServerUrl = window._env_.REACT_APP_API_SERVER_URL;
 
 export const getPublicResource = async (): Promise<ApiResponse> => {
   const config: AxiosRequestConfig = {
-    url: `${apiServerUrl}/api/messages/public`,
+    url: `/api/messages/public`,
     method: "GET",
     headers: {
       "content-type": "application/json",
     },
+    baseURL: apiServerUrl,
   };
 
   const { data, error } = (await callExternalApi({ config })) as ApiResponse;
@@ -30,13 +32,14 @@ export const getCreateUpdateUserInfo = async (
   data: UserInfoPayload
 ): Promise<GetCreateResponse> => {
   const config: AxiosRequestConfig = {
-    url: `${apiServerUrl}/api/userinfo/getcreate`,
+    url: `/api/userinfo/getcreate`,
     method: "POST",
     headers: {
       "content-type": "application/json",
       Authorization: `Bearer ${accessToken}`,
     },
     data: data,
+    baseURL: apiServerUrl,
   };
 
   const response = (await callExternalApi({

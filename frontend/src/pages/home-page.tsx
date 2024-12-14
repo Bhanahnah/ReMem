@@ -6,8 +6,9 @@ import { PageLayout } from "../components/page-layout";
 export const HomePage: React.FC = () => (
   <PageLayout>
     <>
-      <HeroBanner />
-      <Auth0Features />
+      <h3 className="position-absolute top-50 start-50 translate-middle">
+        You must be logged in to use this app {":)"}
+      </h3>
     </>
   </PageLayout>
 );

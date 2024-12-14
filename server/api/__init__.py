@@ -3,6 +3,7 @@
 ##########################################
 
 import logging
+from logging.config import dictConfig
 import sys
 
 from flask import Flask
@@ -11,13 +12,31 @@ from flask_talisman import Talisman
 
 from api import exception_views
 from api.messages import messages_views
-from api.messages import routes_userinfo
+from api.messages import routes_userinfo, routes_input
 from api.security.auth0_service import auth0_service
 
 from common.utils import safe_get_env_var
 
 
 def create_app():
+
+    # Enable all logging????
+    dictConfig({
+    'version': 1,
+    'formatters': {'default': {
+        'format': '[%(asctime)s] %(levelname)s in %(module)s: %(message)s',
+    }},
+    'handlers': {'wsgi': {
+        'class': 'logging.StreamHandler',
+        'stream': 'ext://flask.logging.wsgi_errors_stream',
+        'formatter': 'default'
+    }},
+    'root': {
+        'level': 'INFO',
+        'handlers': ['wsgi']
+    }
+    })
+
 
 
 
@@ -82,8 +101,11 @@ def create_app():
     # TODO: DONT ALLOW * CORS ORIGINS (find origin url of watsonx assistant)
     CORS(
         app,
-        resources={r"/api/*": {"origins": [client_origin_url, "*"]}},
+        # resources={r"/api/*": {"origins": [client_origin_url, "localhost", "*"]}},
+        resources={r"/api/*": {"origins": "*"}},
+        origins="*",
         allow_headers=["Authorization", "Content-Type"],
+        supports_credentials=True,
         methods=["GET", "POST"],
         max_age=86400
     )
@@ -95,5 +117,6 @@ def create_app():
     app.register_blueprint(messages_views.bp)
     app.register_blueprint(exception_views.bp)
     app.register_blueprint(routes_userinfo.bp)
+    app.register_blueprint(routes_input.bp)
 
     return app

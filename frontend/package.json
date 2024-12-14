@@ -15,8 +15,8 @@
     "typescript": "^4.7.4"
   },
   "scripts": {
-    "start": "cross-env PORT=4040 react-scripts start",
-    "build": "react-scripts build",
+    "start": "chmod +x ./env.sh && ./env.sh && mv env.js ./public/env.js && cross-env PORT=4040 react-scripts start",
+    "build": "sh -ac '. ./.env; react-scripts build'",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint . --ext .ts,.tsx --fix"
